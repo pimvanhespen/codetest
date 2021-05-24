@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <SliceCompile Include="../../Slice/Memory.ice" />
+        <SliceCompile Include="../../Slice/Wallclock.ice" />
+        <SliceCompile Include="../../Slice/Response.ice" />
+        <PackageReference Include="zeroc.ice.net" Version="3.7.5" />
+        <PackageReference Include="zeroc.icebuilder.msbuild" Version="5.0.7" />
+    </ItemGroup>
+
+</Project>
