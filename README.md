@@ -1,6 +1,8 @@
 # codetest
 
 ## Client
+
+### Prerequisites
 When running the client on a Linux machine use: 
 ```sh
     sudo apt-get install zeroc-ice-all-runtime
@@ -11,7 +13,7 @@ or for development:
 ```    
 more info: https://doc.zeroc.com/ice/3.7/release-notes/using-the-linux-binary-distributions .    
     
-### Get and run
+### Run the app
 ```sh
     git clone https://github.com/pimvanhespen/codetest.git
     cd codetest/Client
@@ -33,6 +35,13 @@ example external config
 ```
 
 ## Server
+
+### Prerequisites  
+* [Dotnet-sdk installation](https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu)
+* Open port 10000
+
+### Run the app
+
 ```sh
     git clone https://github.com/pimvanhespen/codetest.git
     cd codetest/Server/App
