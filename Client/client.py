@@ -5,7 +5,7 @@ import Codetest
 
 
 def get_memory(communicator):
-	base = communicator.stringToProxy("FreeMemory:default -p 10000")
+	base = communicator.propertyToProxy("Memory.Proxy")
 	prx = Codetest.MemoryPrx.checkedCast(base)
 	if not prx:
 		raise RuntimeError("Invalid proxy")
@@ -15,7 +15,7 @@ def get_memory(communicator):
 
 
 def get_wallclock(communicator):
-	base = communicator.stringToProxy("Wallclock:default -p 10000")
+	base = communicator.propertyToProxy("Wallclock.Proxy")
 	prx = Codetest.WallclockPrx.checkedCast(base)
 	if not prx:
 		raise RuntimeError("Invalid proxy")
@@ -25,7 +25,7 @@ def get_wallclock(communicator):
 
 
 def get_responsetime(communicator):
-	base = communicator.stringToProxy("Response:default -p 10000")
+	base = communicator.propertyToProxy("Response.Proxy")
 	prx = Codetest.ResponsePrx.checkedCast(base)
 	if not prx:
 		raise RuntimeError("Invalid proxy")
@@ -34,7 +34,7 @@ def get_responsetime(communicator):
 	return elapsed
 
 
-with Ice.initialize(sys.argv) as communicator:
+with Ice.initialize(sys.argv, "client.config") as communicator:
 	print("Free memory: ", get_memory(communicator))
 	print("Time: ", get_wallclock(communicator))
 	print("Response time: ", get_responsetime(communicator))

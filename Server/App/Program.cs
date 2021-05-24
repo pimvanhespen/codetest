@@ -8,11 +8,11 @@ namespace App
         {
             try
             {
-                using var communicator = Ice.Util.initialize(ref args);
+                using var communicator = Ice.Util.initialize(ref args, "config.server");
 
                 // todo: replace to config
                 var adapter =
-                    communicator.createObjectAdapterWithEndpoints("SimpleServerAdapter",
+                    communicator.createObjectAdapterWithEndpoints("Health",
                         "default -h localhost -p 10000");
                 adapter.add(new MemoryI(), Ice.Util.stringToIdentity("FreeMemory"));
                 adapter.add(new WallclockI(), Ice.Util.stringToIdentity("Wallclock"));
